@@ -42,6 +42,10 @@ git clone https://github.com/googleapis/googleapis/tree/master/google/api && \
 sudo cp -a ~/googleapis/google/api /usr/local/include/google/api
 ```
 
+Configure IDE import path to include google annotation proto
+
+![image](https://user-images.githubusercontent.com/6024289/226167761-67571647-14f8-4083-a915-19fc99541a27.png)
+
 ## build pb, run code generator
 ```
 protoc -I. -I/usr/local/include -I=$GOPATH/src \
