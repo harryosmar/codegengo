@@ -15,7 +15,7 @@ export PATH="$PATH:$(go env GOPATH)/bin"
 # will be installed into $(go env GOPATH)/bin
 go install google.golang.org/protobuf/cmd/protoc-gen-go
 
-# make sure verison of protoc go plugin matched with protoc
+# make sure verison of protoc-gen-go plugin matched with protoc
 protoc-gen-go --version  && protoc --version
 ```
 
