@@ -19,7 +19,7 @@ go install google.golang.org/protobuf/cmd/protoc-gen-go
 protoc-gen-go --version  && protoc --version
 ```
 
-## # install go grpc service code generator. Generate *_grpc.pb.go : gRPC server and client interfaces. command `protoc --go-grpc_out=`
+##  install go grpc service code generator. Generate *_grpc.pb.go : gRPC server and client interfaces. command `protoc --go-grpc_out=`
 ```
 # will be installed into $(go env GOPATH)/bin
 go install google.golang.org/grpc/cmd/protoc-gen-go-grpc
@@ -27,8 +27,11 @@ go install google.golang.org/grpc/cmd/protoc-gen-go-grpc
 
 ## install go http service code generator. Generate *.pb.gw.go : GRPC-Gateway reverse-proxy definitions Http server. command `protoc --grpc-gateway_out=`
 ```
-# # will be installed into $(go env GOPATH)/bin
+# will be installed into $(go env GOPATH)/bin
 go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway@v2.6
+
+# also install open api doc swagger
+go install github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2
 ```
 
 
@@ -41,10 +44,10 @@ sudo cp -a ~/googleapis/google/api /usr/local/include/google/api
 
 ## build pb, run code generator
 ```
-protoc -I. -I/usr/local/include \
---go_out=./ --go_opt=paths=source_relative \
---go-grpc_out=./ --go-grpc_opt=paths=source_relative \
---grpc-gateway_out=logtostderr=true:./ --grpc-gateway_opt=paths=source_relative \
-./proto/example/example.proto
+protoc -I. -I/usr/local/include -I=$GOPATH/src \
+--go_out=$GOPATH/src \
+--go-grpc_out=$GOPATH/src \
+--grpc-gateway_out=logtostderr=true:$GOPATH/src \
+./grpc/proto/example/example.proto
 ```
 

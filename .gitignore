@@ -1,2 +1,2 @@
 .idea/
-!proto/**/*.proto
+grpc/pb
