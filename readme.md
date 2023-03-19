@@ -51,6 +51,11 @@ Configure IDE import path to include google annotation proto
 
 ![image](https://user-images.githubusercontent.com/6024289/226167761-67571647-14f8-4083-a915-19fc99541a27.png)
 
+When the import path completed Then IDE will not give error in line `import "google/api/annotations.proto";`
+
+![image](https://user-images.githubusercontent.com/6024289/226167950-389429d0-f9f1-4b42-81b7-1e11f2221043.png)
+
+
 ## build pb, run code generator
 ```
 protoc -I. -I/usr/local/include -I=$GOPATH/src \
