@@ -34,6 +34,11 @@ go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway@v2.
 go install github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2
 ```
 
+Check all binary proto plugin installed in `$GOPATH/bin`
+
+![image](https://user-images.githubusercontent.com/6024289/226167864-f14021aa-2247-4879-831f-96b258e3d11d.png)
+
+
 
 ## setting up google annotation proto
 ```
