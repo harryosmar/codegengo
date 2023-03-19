@@ -1,0 +1,22 @@
+syntax = "proto3";
+package example;
+
+option go_package = "github.com/harryosmar/codegengo";
+
+import "google/api/annotations.proto";
+
+service MyService {
+  rpc GetHello(HelloRequest) returns (HelloResponse) {
+    option (google.api.http) = {
+      get: "/hello/{name}"
+    };
+  }
+}
+
+message HelloRequest {
+  string name = 1;
+}
+
+message HelloResponse {
+  string message = 1;
+}
