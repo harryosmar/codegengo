@@ -111,10 +111,12 @@ sudo cp -a ~/googleapis/google/api /usr/local/include/google/api
 
 ## build pb, run code generator
 ```
-protoc -I. -I/usr/local/include -I=$GOPATH/src \
+protoc -I=. -I=/usr/local/include -I=$GOPATH/src \
 --go_out=$GOPATH/src \
 --go-grpc_out=$GOPATH/src \
 --grpc-gateway_out=logtostderr=true:$GOPATH/src \
+--swagger_out=. \
+--dumdum_out=. \
 ./grpc/proto/example/example.proto
 ```
 
